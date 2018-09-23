@@ -33,7 +33,6 @@
   "devDependencies": {
     "assert": "^1.1.2",
     "bitcore-build-dash": "dashpay/bitcore-build-dash",
-    "bls-lib": "^0.3.4",
     "brfs": "^1.2.0",
     "browserify": "^8.1.0",
     "chai": "~1.10.0",
@@ -41,6 +40,7 @@
   },
   "dependencies": {
     "aes": "^0.1.0",
-    "bitcore-lib-dash": "^0.15.0"
+    "bitcore-lib-dash": "^0.15.0",
+    "bls-lib": "^0.3.4"
   }
 }

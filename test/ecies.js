@@ -3,7 +3,7 @@
 var ECIES = require('../');
 
 var should = require('chai').should();
-var bitcore = require('bitcore-lib-dash');
+var bitcore = require('@dashevo/dashcore-lib');
 var PrivateKey = bitcore.PrivateKey;
 
 

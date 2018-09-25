@@ -35,8 +35,7 @@
     "bitcore-build-dash": "dashpay/bitcore-build-dash",
     "brfs": "^2.0.1",
     "browserify": "^16.2.2",
-    "chai": "~4.1.2",
-    "gulp": "^3.9.1"
+    "chai": "~4.1.2"
   },
   "dependencies": {
     "aes": "^0.1.0",

@@ -31,7 +31,7 @@ bls.onModuleInit(() => {
   const ciphertext = alice.encrypt(message);
   console.log('ecdsa cipher:', ciphertext.toString('hex'));
 
-  const decrypted = bob.decrypt(ciphertext).toString();
+  let decrypted = bob.decrypt(ciphertext).toString();
   console.log('decrypted:', decrypted);
 
   // shiny new bls
@@ -52,4 +52,12 @@ bls.onModuleInit(() => {
 
   const blsDecrypted = blsBob.decryptBLS(bls, blsCiphertext).toString();
   console.log('bls decrypted:', blsDecrypted);
+
+  blsAlice.opts.noKey = true;
+  blsBob.opts.noKey = true;
+  const encrypted = blsAlice.encryptBLS(bls, message);
+  decrypted = blsBob.decryptBLS(bls, encrypted).toString();
+
+  console.log('bls no key cipher:', encrypted.toString('hex'));
+  console.log('bls no key decrypted:', decrypted);
 });

@@ -192,7 +192,7 @@ describe('BLS', function () {
     .blsPublicKey(blsAlicePublicKey);
 
   const message = 'attack at dawn';
-  const encrypted = 'f1f2de7190928473c9d0949e7e03bb2863f3fe306551524c500af6d2b203101cc36d76f872109d45d53d0bb85ff31c0f8ac1336f1d049ab9756548e11c699e31';
+  const encrypted = '345845524279753253424b704b4e326b7a58344a624a4b6b533261427334447469397555433735763338634a395238334457584a4a4b566d6b5347484364656b64474e4e334d7465756f4a57594c75567033694b7039486bf1f2de7190928473c9d0949e7e03bb2863f3fe306551524c500af6d2b203101cc36d76f872109d45d53d0bb85ff31c0f8ac1336f1d049ab9756548e11c699e31';
   const encBuf = new Buffer(encrypted, 'hex');
 
   it('BLS: correctly encrypts a message', function () {
@@ -207,14 +207,13 @@ describe('BLS', function () {
       .toString();
     decrypted.should.equal(message);
   });
-  /* disable for now
-    it('BLS: retrieves senders publickey from the encypted buffer', function() {
-      var bob2 = ECIES().privateKey(bobKey);
-      var decrypted = bob2.decrypt(encBuf).toString();
-      bob2._publicKey.toDER().should.deep.equal(aliceKey.publicKey.toDER());
-      decrypted.should.equal(message);
-    });
-  */
+
+  it('BLS: retrieves senders publickey from the encypted buffer', function() {
+    var blsBob2 = ECIES().blsSecretKey(blsBobSecretKey);
+    var decrypted = blsBob2.decryptBLS(bls, encBuf).toString();
+    decrypted.should.equal(message);
+  });
+
   it('BLS: roundtrips', function () {
     var secret = 'some secret message!!!';
     var encrypted = blsAlice.encryptBLS(bls, secret);

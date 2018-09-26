@@ -22,6 +22,7 @@ bls.onModuleInit(() => {
     .privateKey(bobKey)
     .publicKey(aliceKey.publicKey);
 
+  console.log(bob._publicKey);
   const message = 'attack at dawn';
 
   console.log(`encrypting message "${message}"`);
@@ -45,6 +46,7 @@ bls.onModuleInit(() => {
   console.log('with bls');
 
   bls.init();
+
   const blsCiphertext = blsAlice.encryptBLS(bls, message);
   console.log('bls cipher:', blsCiphertext.toString('hex'));
 

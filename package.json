@@ -31,15 +31,15 @@
   },
   "homepage": "https://github.com/dashevo/bitcore-ecies-dash",
   "devDependencies": {
-    "assert": "^1.1.2",
+    "assert": "^1.4.1",
     "bitcore-build-dash": "dashpay/bitcore-build-dash",
-    "brfs": "^1.2.0",
-    "browserify": "^8.1.0",
-    "chai": "~1.10.0",
-    "gulp": "^3.8.10"
+    "brfs": "^2.0.1",
+    "browserify": "^16.2.2",
+    "chai": "~4.1.2"
   },
   "dependencies": {
     "aes": "^0.1.0",
-    "bitcore-lib-dash": "^0.15.0"
+    "@dashevo/dashcore-lib": "^1.0.0-alpha.10",
+    "bls-lib": "^0.3.4"
   }
 }
